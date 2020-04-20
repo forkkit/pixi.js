@@ -35,8 +35,8 @@
     "postdist": "copyfiles -f bundles/*/dist/* dist && copyfiles -f \"packages/**/dist/*\" dist/packages",
     "prerelease": "npm run clean:build && npm test",
     "postversion": "npm run build:prod",
-    "release": "lerna publish",
-    "compile:docs": "tsc -p tsconfig.docs.json"
+    "release": "lerna publish --exact",
+    "compile:docs": "tsc -p tsconfig.docs.json --skipLibCheck"
   },
   "pre-commit": [
     "lintfix"
@@ -73,6 +73,6 @@
     "rollup-plugin-terser": "^4.0.4",
     "rollup-plugin-typescript": "^1.0.1",
     "tsd-jsdoc": "^2.1.3",
-    "typescript": "^3.6.2"
+    "typescript": "^3.8.3"
   }
 }
